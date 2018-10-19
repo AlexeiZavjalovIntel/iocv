@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 . ../scripts/set_environment.sh
 
 rm -rf ocl-icd

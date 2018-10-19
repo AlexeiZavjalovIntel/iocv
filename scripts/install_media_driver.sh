@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 . ../scripts/set_environment.sh
 
 sudo apt-get install libpciaccess-dev autoconf libtool -y

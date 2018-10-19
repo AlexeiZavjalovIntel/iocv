@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 . ../scripts/set_environment.sh
 
 sudo apt-get install flex bison clang-4.0 cmake g++ git patch zlib1g-dev autoconf xutils-dev libtool pkg-config libpciaccess-dev -y

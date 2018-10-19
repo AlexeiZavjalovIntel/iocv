@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 . ../scripts/set_environment.sh
 
 sudo apt-get install libgtk2.0-dev -y
