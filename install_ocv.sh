@@ -26,6 +26,7 @@ sudo apt-get install ccache cmake pkg-config dh-autoreconf git -y
 rm -rf $WORK_FOLDER
 mkdir $WORK_FOLDER
 cd $WORK_FOLDER
+sudo rm /etc/ld.so.conf.d/opt_intel.conf
 echo "/opt/intel/lib/" | sudo tee --append /etc/ld.so.conf.d/opt_intel.conf
 
 step_1:
@@ -47,21 +48,21 @@ ${SCRIPT_FOLDER}/install_media_driver.sh
 rc=$?; if [[ $rc != 0 ]]; then echo -e "${RED}step 3 failed${NC}"; exit $rc; fi
 
 step_4:
-echo -e "\n${GREEN}step_4: installing Media SDK...${NC}\n"
+echo -e "\n${GREEN}step_4: installing OpenCL wrapper...${NC}\n"
 cd $WORK_FOLDER
-${SCRIPT_FOLDER}/install_mediasdk.sh
+${SCRIPT_FOLDER}/install_ocl_wrapper.sh
 rc=$?; if [[ $rc != 0 ]]; then echo -e "${RED}step 4 failed${NC}"; exit $rc; fi
 
 step_5:
-echo -e "\n${GREEN}step_5: installing OpenCL wrapper...${NC}\n"
+echo -e "\n${GREEN}step_5: installing Khronos OpenCL headers...${NC}\n"
 cd $WORK_FOLDER
-${SCRIPT_FOLDER}/install_ocl_wrapper.sh
+${SCRIPT_FOLDER}/install_ocl_headers.sh
 rc=$?; if [[ $rc != 0 ]]; then echo -e "${RED}step 5 failed${NC}"; exit $rc; fi
 
 step_6:
-echo -e "\n${GREEN}step_6: installing Khronos OpenCL headers...${NC}\n"
+echo -e "\n${GREEN}step_6: installing Media SDK...${NC}\n"
 cd $WORK_FOLDER
-${SCRIPT_FOLDER}/install_ocl_headers.sh
+${SCRIPT_FOLDER}/install_mediasdk.sh
 rc=$?; if [[ $rc != 0 ]]; then echo -e "${RED}step 6 failed${NC}"; exit $rc; fi
 
 step_7:
