@@ -6,6 +6,7 @@ set -e
 
 sudo apt-get install flex bison clang-4.0 cmake g++ git patch zlib1g-dev autoconf xutils-dev libtool pkg-config libpciaccess-dev -y
 
+rm -rf neo
 mkdir neo
 cd neo
 git clone -b release_40 https://github.com/llvm-mirror/clang clang_source
@@ -26,4 +27,8 @@ cmake -DIGC_OPTION__OUTPUT_DIR=../igc-install/Release \
 make -j$(nproc) VERBOSE=1
 make -j$(nproc) package VERBOSE=1
 
-sudo dpkg --instdir=/opt/intel -i *.deb
+sudo dpkg -x intel-igc-core_*.deb /opt/intel
+sudo dpkg -x intel-igc-media_*.deb /opt/intel
+sudo dpkg -x intel-igc-opencl-devel_*.deb /opt/intel
+sudo dpkg -x intel-igc-opencl_*.deb /opt/intel
+sudo ldconfig
