@@ -15,7 +15,7 @@ make -j32
 sudo make install
 
 sudo cp va/x11/*.h /opt/intel/include/va/
-sudo ln -sf /opt/intel/lib/libva.so /opt/intel/libva.so.1
+sudo ln -sf /opt/intel/lib/libva.so /opt/intel/lib/libva.so.1
 sudo ln -sf /opt/intel/lib/libva-x11.so /opt/intel/lib/libva-x11.so.1
 sudo ln -sf /opt/intel/lib/libva-drm.so /opt/intel/lib/libva-drm.so.1
 sudo ln -sf /opt/intel/lib/libva-glx.so /opt/intel/lib/libva-glx.so.1
