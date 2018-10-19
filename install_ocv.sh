@@ -84,4 +84,4 @@ step_neo:
 echo -e "\n${GREEN}step_neo: installing Intel OpenCL Neo...${NC}\n"
 cd $WORK_FOLDER
 ${SCRIPT_FOLDER}/install_neo.sh
-rc=$?; if [[ $rc != 0 ]]; then echo -e "${RED}step 8 failed${NC}"; exit $rc; fi
+rc=$?; if [[ $rc != 0 ]]; then echo -e "${RED}step neo failed${NC}"; exit $rc; fi
