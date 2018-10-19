@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. ../set_environment.sh
+. ../scripts/set_environment.sh
 
 rm -rf ocl_headers
 git clone https://github.com/KhronosGroup/OpenCL-Headers.git ocl_headers

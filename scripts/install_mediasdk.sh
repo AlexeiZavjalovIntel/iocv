@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. ../set_environment.sh
+. ../scripts/set_environment.sh
 
 rm -rf msdk
 git clone https://github.com/Intel-Media-SDK/MediaSDK msdk

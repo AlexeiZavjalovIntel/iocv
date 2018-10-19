@@ -12,7 +12,7 @@ function jumpto
     exit
 }
 
-SCRIPT_FOLDER=`pwd`
+SCRIPT_FOLDER=`pwd`/scripts
 WORK_FOLDER=`pwd`/WORK
 
 step_0=${1:-"step_0"}
@@ -78,6 +78,7 @@ rc=$?; if [[ $rc != 0 ]]; then echo -e "${RED}step 8 failed${NC}"; exit $rc; fi
 
 echo -e "\n${GREEN}Setup is done. You can now install Intel Neo driver manually or enter '$0 step_neo' to build it on this machine.${NC}\n"
 exit 0
+
 step_neo:
 echo -e "\n${GREEN}step_neo: installing Intel OpenCL Neo...${NC}\n"
 cd $WORK_FOLDER

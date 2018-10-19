@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. ../set_environment.sh
+. ../scripts/set_environment.sh
 
 rm -rf ocl-icd
 git clone https://github.com/OCL-dev/ocl-icd.git

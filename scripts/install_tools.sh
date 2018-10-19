@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. ../set_environment.sh
+. ../scripts/set_environment.sh
 
 rm -f clinfo*.deb
 apt-get download clinfo

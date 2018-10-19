@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. ../set_environment.sh
+. ../scripts/set_environment.sh
 
 rm -rf gmmlib
 git clone https://github.com/intel/gmmlib.git
