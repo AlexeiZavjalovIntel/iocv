@@ -15,6 +15,7 @@ mkdir build
 cd build
 export VA_INTEL_MSDK_ROOT="/opt/intel/"
 export VA_INTEL_IOCL_ROOT="/opt/intel/"
+export MFX_HOME=/opt/intel/
 cmake -DHAVE_VA_INTEL=ON -DWITH_MFX=ON -DWITH_VA=ON -DWITH_OPENCL=ON \
       -DWITH_VA_INTEL=ON -DWITH_OPENGL=ON -DWITH_CUDA=OFF -DCMAKE_INSTALL_PREFIX:PATH=/opt/intel/ ..
 make -j32
