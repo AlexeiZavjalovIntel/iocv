@@ -11,7 +11,7 @@ git clone https://github.com/intel/libva.git
 cd libva
 git checkout tags/2.3.0
 ./autogen.sh --enable-wayland --prefix=/opt/intel
-make -j32
+make -j$N_JOBS
 sudo make install
 
 sudo cp va/x11/*.h /opt/intel/include/va/

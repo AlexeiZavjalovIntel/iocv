@@ -24,8 +24,8 @@ cd build_igc
 cmake -DIGC_OPTION__OUTPUT_DIR=../igc-install/Release \
     -DCMAKE_BUILD_TYPE=Release -DIGC_OPTION__ARCHITECTURE_TARGET=Linux64 \
     ../igc/IGC
-make -j$(nproc) VERBOSE=1
-make -j$(nproc) package VERBOSE=1
+make -j$N_JOBS VERBOSE=1
+make -j$N_JOBS package VERBOSE=1
 
 sudo dpkg -x intel-igc-core_*.deb /opt/intel
 sudo dpkg -x intel-igc-media_*.deb /opt/intel

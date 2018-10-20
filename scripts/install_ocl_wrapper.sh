@@ -10,5 +10,5 @@ cd ocl-icd/
 sudo apt-get install ruby -y
 ./bootstrap
 ./configure --prefix=/opt/intel/
-make -j32
+make -j$N_JOBS
 sudo make install

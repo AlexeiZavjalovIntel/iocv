@@ -40,3 +40,4 @@ echo -e "OpenCV Version =" `opencv_version`
 echo -e "LibVA Version =" `pkg-config --variable="libva_version" libva`
 echo -e "OpenCL Version =" `pkg-config --modversion OpenCL`
 echo -e "MSDK Dispatcher Version =" `pkg-config --modversion mfx`
+echo

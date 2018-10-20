@@ -11,5 +11,5 @@ cd msdk
 mkdir build
 cd build
 cmake -DCMAKE_INSTALL_PREFIX:PATH=/opt/intel/ ..
-make -j32
+make -j$N_JOBS
 sudo make install

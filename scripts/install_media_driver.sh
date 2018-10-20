@@ -12,5 +12,5 @@ git checkout origin/intel-media-18.3
 mkdir build-media
 cd build-media
 cmake -DCMAKE_INSTALL_PREFIX:PATH=/opt/intel/ ..
-make -j32
+make -j$N_JOBS
 sudo make install
