@@ -20,16 +20,11 @@ jumpto $step_0
 
 step_0:
 echo -e "\n${GREEN}step_0: installing basic dependencies...${NC}\n"
-sudo add-apt-repository universe
-sudo apt-get update
-sudo apt-get upgrade
-sudo apt-get install ccache cmake pkg-config dh-autoreconf git -y
+${SCRIPT_FOLDER}/install_dependencies.sh
+rc=$?; if [[ $rc != 0 ]]; then echo -e "${RED}step 0 failed${NC}"; exit $rc; fi
 rm -rf $WORK_FOLDER
 mkdir $WORK_FOLDER
 cd $WORK_FOLDER
-sudo rm /etc/ld.so.conf.d/opt_intel.conf
-echo "/opt/intel/lib/" | sudo tee --append /etc/ld.so.conf.d/opt_intel.conf
-echo "opt/intel/usr/lib/" | sudo tee --append /etc/ld.so.conf.d/opt_intel.conf
 
 step_1:
 echo -e "\n${GREEN}step_1: installing libva...${NC}\n"
@@ -79,6 +74,7 @@ cd $WORK_FOLDER
 ${SCRIPT_FOLDER}/install_tools.sh
 rc=$?; if [[ $rc != 0 ]]; then echo -e "${RED}step 8 failed${NC}"; exit $rc; fi
 
+sudo cp scripts/environment_setup.sh /opt/intel/
 echo -e "\n${GREEN}Setup is done. You can now install Intel Neo driver manually or enter '$0 step_neo' to build it on this machine.${NC}\n"
 exit 0
 
@@ -88,3 +84,9 @@ cd $WORK_FOLDER
 ${SCRIPT_FOLDER}/install_neo.sh
 rc=$?; if [[ $rc != 0 ]]; then echo -e "${RED}step neo failed${NC}"; exit $rc; fi
 echo -e "\n${GREEN}Neo driver has been installed.${NC}\n"
+
+step_build_dpkg:
+echo -e "\n${GREEN}step_build_dpkg: building deb package...${NC}\n"
+cd $WORK_FOLDER
+${SCRIPT_FOLDER}/build_dpkg.sh
+rc=$?; if [[ $rc != 0 ]]; then echo -e "${RED}step build_dpkg failed${NC}"; exit $rc; fi
