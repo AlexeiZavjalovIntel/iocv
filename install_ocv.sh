@@ -20,6 +20,7 @@ jumpto $step_0
 
 step_0:
 echo -e "\n${GREEN}step_0: installing basic dependencies...${NC}\n"
+sudo add-apt-repository universe
 sudo apt-get update
 sudo apt-get upgrade
 sudo apt-get install ccache cmake pkg-config dh-autoreconf git -y
@@ -28,6 +29,7 @@ mkdir $WORK_FOLDER
 cd $WORK_FOLDER
 sudo rm /etc/ld.so.conf.d/opt_intel.conf
 echo "/opt/intel/lib/" | sudo tee --append /etc/ld.so.conf.d/opt_intel.conf
+echo "opt/intel/usr/lib/" | sudo tee --append /etc/ld.so.conf.d/opt_intel.conf
 
 step_1:
 echo -e "\n${GREEN}step_1: installing libva...${NC}\n"
@@ -85,3 +87,4 @@ echo -e "\n${GREEN}step_neo: installing Intel OpenCL Neo...${NC}\n"
 cd $WORK_FOLDER
 ${SCRIPT_FOLDER}/install_neo.sh
 rc=$?; if [[ $rc != 0 ]]; then echo -e "${RED}step neo failed${NC}"; exit $rc; fi
+echo -e "\n${GREEN}Neo driver has been installed.${NC}\n"
