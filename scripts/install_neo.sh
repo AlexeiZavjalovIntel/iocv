@@ -23,7 +23,7 @@ mkdir build_igc
 cd build_igc
 cmake -DIGC_OPTION__OUTPUT_DIR=../igc-install/Release \
     -DCMAKE_BUILD_TYPE=Release -DIGC_OPTION__ARCHITECTURE_TARGET=Linux64 \
-    ../igc/IGC
+    ../igc/IGC -DCMAKE_INSTALL_PREFIX:PATH=/opt/intel/
 make -j$N_JOBS VERBOSE=1
 make -j$N_JOBS package VERBOSE=1
 

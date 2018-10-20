@@ -10,7 +10,7 @@ rm -rf libva
 git clone https://github.com/intel/libva.git
 cd libva
 git checkout tags/2.3.0
-./autogen.sh --enable-wayland --prefix=/opt/intel
+./autogen.sh --enable-wayland --enable-x11 --enable-glx --enable-drm --prefix=/opt/intel
 make -j$N_JOBS
 sudo make install
 
