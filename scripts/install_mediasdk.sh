@@ -16,3 +16,4 @@ cd build
 cmake -DCMAKE_INSTALL_PREFIX:PATH=/opt/intel/ ..
 make -j$N_JOBS
 sudo make install
+sudo cp -rf /opt/intel/include/mfx/* /opt/intel/include/
