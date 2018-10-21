@@ -9,7 +9,7 @@ curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.s
 sudo apt-get update -y
 sudo apt-get install git-lfs -y
 git lfs install
-GIT_LFS_SKIP_SMUDGE=1 git clone -b mediasdk_for_cv --single-branch https://github.com/Intel-Media-SDK/MediaSDK msdk
+GIT_LFS_SKIP_SMUDGE=1 git clone -b intel-mediasdk-18.3 --single-branch https://github.com/Intel-Media-SDK/MediaSDK msdk
 cd msdk
 mkdir build
 cd build
