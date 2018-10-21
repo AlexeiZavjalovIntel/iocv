@@ -27,8 +27,8 @@ cmake -DIGC_OPTION__OUTPUT_DIR=../igc-install/Release \
 make -j$N_JOBS VERBOSE=1
 make -j$N_JOBS package VERBOSE=1
 
-sudo dpkg -x intel-igc-core_*.deb /opt/intel
-sudo dpkg -x intel-igc-media_*.deb /opt/intel
-sudo dpkg -x intel-igc-opencl-devel_*.deb /opt/intel
-sudo dpkg -x intel-igc-opencl_*.deb /opt/intel
+DEB_FILES=`ls *.deb`
+while read -r deb; do
+    sudo dpkg -x $deb /opt/intel
+done <<< "$DEB_FILES"
 sudo ldconfig
