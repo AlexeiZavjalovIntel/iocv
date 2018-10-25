@@ -5,6 +5,7 @@ set -e
 . ../scripts/set_environment.sh
 
 rm -rf msdk
+sudo apt-get install curl -y
 curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo -E bash
 sudo apt-get update -y
 sudo apt-get install git-lfs -y
