@@ -47,5 +47,5 @@ done <<< "$DEB_FILES"
 sudo ldconfig
 
 echo -e "/opt/intel/lib\n/opt/intel/usr/lib\n/opt/intel/usr/local/lib\n/opt/intel/usr/local/lib64" | sudo tee /etc/ld.so.conf.d/libintelopencl.conf
-echo "/opt/intel/usr/local/lib64/libigdrcl.so" | sudo tee /etc/OpenCL/vendors/intel.icd
+echo "/opt/intel/usr/local/lib/libigdrcl.so" | sudo tee /etc/OpenCL/vendors/intel.icd
 sudo ldconfig
