@@ -75,7 +75,7 @@ ${SCRIPT_FOLDER}/install_tools.sh
 rc=$?; if [[ $rc != 0 ]]; then echo -e "${RED}step 8 failed${NC}"; exit $rc; fi
 
 sudo cp -f ${SCRIPT_FOLDER}/environment_setup.sh /opt/intel/
-echo -e "\n${GREEN}Setup is done. You can now install Intel Neo driver manually or enter '$0 step_neo' to build it on this machine.${NC}\n"
+echo -e "\n${GREEN}Setup is done. You can now install Intel Neo driver manually (recommended) or enter '$0 step_neo' to build it on this machine.${NC}\n"
 exit 0
 
 step_neo:
